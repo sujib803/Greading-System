@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS_Style.css" type="text/css">
+    <title>Greading System</title>
+</head>
+<body>
+    
+ 
+    <div class="maindiv1">
+        <h2>Show my average marks & GPA ..</h2><br>
+        <label class="subnam">Accounting Theory & Practice  : </label><input id="input1" class="Input1" type="text"><br>
+        <label class="subnam">Programming in Java           : </label><input id="input2" class="Input1" type="text"><br>
+        <label class="subnam">Operating Systems application : </label><input id="input3" class="Input1" type="text"><br>
+        <label class="subnam">Surveillance Security System  : </label><input id="input4" class="Input1" type="text"><br>
+        <label class="subnam">Web Development Project       : </label><input id="input5" class="Input1" type="text"><br>
+        <label class="subnam">Sequential Logic System       : </label><input id="input6" class="Input1" type="text"><br>
+        <label class="subnam">PCB Design and Circuit Making : </label><input id="input7" class="Input1" type="text"><br>
+        <button id="s-button" onclick="Myfunction()">SUBMIT</button>
+    </div>
+    <div class="maindiv2">
+        <h3>Here is your result</h1>
+        <p id="in0" style="color: red;"></p>
+        <p id="in1"></p>
+        <p id="in2"></p>
+        <p id="in3"></p>
+        <p id="in4"></p>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+    
+    <script>
+
+        function Myfunction() {
+            let sub_1 = document.getElementById('input1').value;
+            let sub_2 = document.getElementById('input2').value;
+            let sub_3 = document.getElementById('input3').value;
+            let sub_4 = document.getElementById('input5').value;
+            let sub_5 = document.getElementById('input6').value;
+            let sub_6 = document.getElementById('input7').value;
+            let sub_7 = document.getElementById('input7').value;
+
+            let subject_1 = Math.floor(sub_1)
+            let subject_2 = Math.floor(sub_2)
+            let subject_3 = Math.floor(sub_3)
+            let subject_4 = Math.floor(sub_4)
+            let subject_5 = Math.floor(sub_5)
+            let subject_6 = Math.floor(sub_6)
+            let subject_7 = Math.floor(sub_7)
+
+                if(subject_1 == 0 || subject_2 == 0 || subject_3 == 0 || subject_4 == 0 || subject_5 == 0 || subject_6 == 0 || subject_7 == 0){
+                    alert("Pleass, Enter your all subject mark's..");
+                }
+                else{
+                    if(subject_1 < 33 || subject_2 < 33 || subject_3 < 33 || subject_4 < 33 || subject_5 < 33 || subject_6 < 33 || subject_7 < 33 ){
+                        document.getElementById('in0').innerText="Sorry to say, You are failed."
+                        document.getElementById('in1').innerText=""
+                        document.getElementById('in2').innerText=""
+                        document.getElementById('in3').innerText=""
+                    }
+                    else{
+                        if( subject_1 > 100 ||  subject_2 > 100 || subject_3 > 100 || subject_4 > 100 || subject_5 > 100 || subject_6 > 100 || subject_7 > 100){
+                            document.getElementById('in0').innerText=""
+                            document.getElementById('in1').innerText=""
+                            document.getElementById('in2').innerText=""
+                            document.getElementById('in3').innerText=""
+                            alert("Pleass , Enter mark's range of 100");
+
+                        }
+                        else{
+                            document.getElementById('in0').innerText=""
+
+                                        // --------Total mark's--------
+
+                            let Totale = subject_1 + subject_2 + subject_3 + subject_4 + subject_5 + subject_6 + subject_7
+                            document.getElementById('in1').innerText="Totale mark is =  " + Totale;
+
+                                        // ----------Avarage mark's-----------
+
+                            let Average = Totale / 7
+                            document.getElementById('in2').innerText="Average mark is =  " + Average;
+
+                                        // ------------Letter grade-------------
+
+                            if (Average >= 80 && Average <= 100) {
+                                document.getElementById('in3').innerHTML ="Your letter grade is =  A+";
+                                }
+                            else if (Average >= 75 && Average <= 79.99) {
+                                document.getElementById('in3').innerHTML ="Your letter grade is =  A";
+                                }
+                            else if (Average >= 70 && Average <= 74.99) {
+                                document.getElementById('in3').innerHTML ="Your letter grade is =  A-";
+                                }
+                            else if (Average >= 65 && Average <= 69.99) {
+                                document.getElementById('in3').innerHTML ="Your letter grade is =  B+";
+                                }
+                            else if (Average >= 60 && Average <= 64.99) {
+                                document.getElementById('in3').innerHTML ="Your letter grade is =  B";
+                                }
+                            else if (Average >= 55 && Average <= 59.99) {
+                                document.getElementById('in3').innerHTML ="Your letter grade is =  B-";
+                                }
+                            else if (Average >= 50 && Average <= 54.99) {
+                                document.getElementById('in3').innerHTML ="Your letter grade is =  C+";
+                                }
+                            else if (Average >= 45 && Average <= 49.99) {
+                                document.getElementById('in3').innerHTML ="Your letter grade is =  C";
+                                }
+                            else if (Average >= 40 && Average <= 44.99) {
+                                document.getElementById('in3').innerHTML ="Your letter grade is =  D";
+                                }
+                            else {
+                                document.getElementById('in3').innerHTML ="Your letter grade is =  E";
+                            }
+
+                        }
+                    
+                    }
+                }
+            }
+
+    </script>
+
+</body>
+</html>
